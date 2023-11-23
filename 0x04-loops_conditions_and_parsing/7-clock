@@ -2,6 +2,7 @@
 #script that displays the time for 12 hours and 59 minutes.
 counter=1
 hours=0
+echo "Hour: [$hours]"
 while [ $counter -le 60 ]
 do
     if [ $counter -eq 60 ]; then
