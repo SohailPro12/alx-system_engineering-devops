@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script that kill  To infinity and beyond.
+pkill -f 7-highlander
