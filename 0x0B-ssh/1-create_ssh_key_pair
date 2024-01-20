@@ -6,15 +6,3 @@
 # Generate RSA key pair
 key_name="school"
 ssh-keygen -t rsa -b 4096 -f "$key_name" -N "betty"
-
-echo "Generating public/private rsa key pair."
-echo "Your identification has been saved in $key_name."
-echo "Your public key has been saved in ${key_name}.pub."
-
-# Display the key fingerprint
-echo "The key fingerprint is:"
-ssh-keygen -lf "${key_name}.pub"
-
-# Display the key's randomart image
-echo "The key's randomart image is:"
-ssh-keygen -lvf "${key_name}.pub"
