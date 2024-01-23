@@ -6,6 +6,5 @@
 # it must return a page that contains the string Hello World!
 sudo apt-get update
 sudo apt-get install -y nginx
-echo "Hello World!" > /usr/share/nginx/html/index.html
-echo "Hello world" > /var/www/html/index.html
+echo "<html><body>Hello World!</body></html>" | sudo tee /var/www/html/index.html
 sudo service nginx restart
