@@ -5,19 +5,17 @@
 # with a GET request (requesting a page) using curl,
 # it must return a page that contains the string Hello World!
 #!/usr/bin/env bash
-# Update package information
+#!/usr/bin/env bash
 apt-get update
-
-# Install Nginx
 apt-get install -y nginx
 
-# Create an HTML file with "Hello World!" content
+#Create simple HTML page
 echo "Hello World!" > /usr/share/nginx/html/index.html
 echo "Hello world" > /var/www/html/index.html
 
-# Add Nginx server block configuration
+#Make sure Nginx is listening on port 80
 echo "server {
-    listen 80;
+    listen 80 ;
     listen [::]:80;
     root /var/www/html;
     index index.html;
@@ -27,4 +25,5 @@ echo "server {
     }
 }" > /etc/nginx/sites-available/default
 
+#Restart
 service nginx restart
