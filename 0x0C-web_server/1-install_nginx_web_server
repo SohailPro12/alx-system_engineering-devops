@@ -4,8 +4,6 @@
 # When querying Nginx at its root /
 # with a GET request (requesting a page) using curl,
 # it must return a page that contains the string Hello World!
-#!/usr/bin/env bash
-#!/usr/bin/env bash
 apt-get update
 apt-get install -y nginx
 
@@ -24,6 +22,5 @@ echo "server {
         try_files $uri $uri/ =404;
     }
 }" > /etc/nginx/sites-available/default
-
 #Restart
 service nginx restart
