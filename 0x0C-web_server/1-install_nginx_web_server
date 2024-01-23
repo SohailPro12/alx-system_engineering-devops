@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
-# Install nginx on your web-01
-# Nginx should be listening on port 80
-# When querying Nginx at its root /
-# with a GET request (requesting a page) using curl,
-# it must return a page that contains the string Hello World!
+# Install and configure Nginx web server on Ubuntu
+
 apt-get update
 apt-get install -y nginx
 
 #Create simple HTML page
 echo "Hello World!" > /usr/share/nginx/html/index.html
 echo "Hello world" > /var/www/html/index.html
-
 #Make sure Nginx is listening on port 80
 echo "server {
     listen 80 ;
@@ -22,5 +18,6 @@ echo "server {
         try_files $uri $uri/ =404;
     }
 }" > /etc/nginx/sites-available/default
-#Restart
+
+#Restart Nginx
 service nginx restart
