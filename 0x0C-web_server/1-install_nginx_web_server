@@ -4,7 +4,26 @@
 # When querying Nginx at its root /
 # with a GET request (requesting a page) using curl,
 # it must return a page that contains the string Hello World!
+#!/usr/bin/env bash
+# Update package information
 sudo apt-get update
+
+# Install Nginx
 sudo apt-get install -y nginx
-echo "<html><body>Hello World!</body></html>" | sudo tee /var/www/html/index.html
+
+# Create an HTML file with "Hello World!" content
+echo "<html><body>Hello World!</body></html>" > /var/www/html/index.html
+
+# Add Nginx server block configuration
+echo "server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/html;
+    index index.html;
+    server_name _;
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}" > /etc/nginx/sites-available/default
+
 sudo service nginx restart
