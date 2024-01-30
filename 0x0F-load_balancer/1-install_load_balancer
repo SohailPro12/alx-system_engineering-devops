@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Enables management via the init script.
+# Distributes requests using a roundrobin algorithm.
+
+sudo apt-get install -y haproxy
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+cat <<EOT | sudo tee -a /etc/haproxy/haproxy.cfg
+frontend charef.tech
+    timeout client  30000
+    bind 0:80
+    default_backend charef.tech_backend
+
+backend charef.tech_backend
+    timeout connect  3000
+    timeout server  30000
+    balance roundrobin
+    server 421972-web-01 54.87.205.91 check
+    server 421972-web-02 54.87.240.9 check
+EOT
