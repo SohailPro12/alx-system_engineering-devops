@@ -3,7 +3,7 @@
 #   - Enables management via the init script.
 #   - Distributes requests using a round-robin algorithm.
 apt-get install -y software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-1.8
+add-apt-repository -y ppa:vbernat/haproxy-2.8
 apt-get update
 apt-get install -y haproxy=2.8.*
 
