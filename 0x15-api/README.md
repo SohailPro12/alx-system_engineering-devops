@@ -56,7 +56,3 @@ Example:
 
 - CapWords or CamelCase is used in Python to denote class names and other types of identifiers that represent classes or types. It helps differentiate class names from other identifiers like functions or variables.
 - Following this convention makes the code more readable and consistent with Python's style guidelines (PEP 8).
-
-```
-
-```
