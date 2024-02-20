@@ -5,8 +5,8 @@ Python script that, using this REST API, for all employee,
 returns information about his/her TODO list progress
 """
 
-import requests
 import json
+import requests
 
 
 if __name__ == "__main__":
