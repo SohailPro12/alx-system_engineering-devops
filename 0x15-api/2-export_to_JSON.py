@@ -6,7 +6,7 @@ returns information about his/her TODO list progress
 and exports it in CSV format.
 """
 
-import csv
+import json
 import requests
 import sys
 
@@ -23,10 +23,19 @@ if __name__ == "__main__":
     user_info = response_user.json()
     employee_name = user_info['name']
 
+    data = {
+        employee_id: [
+            {
+                "task": todo['title'],
+                "completed": todo['completed'],
+                "username": employee_name
+            }
+            for todo in todos
+        ]
+    }
+
+
     filename = '{}.csv'.format(employee_id)
 
-    with open(filename, 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        for todo in todos:
-            csv_writer.writerow([employee_id, employee_name,
-                                 todo['completed'], todo['title']])
+    with open(filename, 'w') as json_file:
+        json.dump(data, json_file)
