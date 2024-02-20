@@ -2,8 +2,9 @@
 
 """
 Python script that, using this REST API, for all employee,
-returns information about his/her TODO list progress 
+returns information about his/her TODO list progress
 """
+
 import requests
 import json
 
