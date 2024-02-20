@@ -23,7 +23,7 @@ if __name__ == "__main__":
     num_completed_tasks = len(completed_tasks)
     total_tasks = len(todos)
 
-    print("Employee {} is done with tasks ({}/{}):".format(
+    print("Employee {} is done with tasks({}/{}):".format(
             employee_name, num_completed_tasks, total_tasks))
 
     for task in completed_tasks:
