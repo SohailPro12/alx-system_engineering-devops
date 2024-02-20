@@ -23,7 +23,7 @@ if __name__ == "__main__":
     user_info = response_user.json()
     employee_name = user_info['name']
 
-    data = {employee_id : []}
+    data = {employee_id: []}
 
     for todo in todos:
         task_info = {
