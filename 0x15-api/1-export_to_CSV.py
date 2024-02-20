@@ -28,4 +28,5 @@ if __name__ == "__main__":
     with open(filename, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, quotechar='"')
         for todo in todos:
-            csv_writer.writerow([employee_id, employee_name, todo['completed'], todo['title']])
+            csv_writer.writerow([employee_id, employee_name,
+                                todo['completed'], todo['title']])
