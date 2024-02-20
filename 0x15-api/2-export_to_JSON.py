@@ -23,16 +23,15 @@ if __name__ == "__main__":
     user_info = response_user.json()
     employee_name = user_info['name']
 
-    data = {
-        employee_id: [
-            {
-                "task": todo['title'],
-                "completed": todo['completed'],
-                "username": employee_name
-            }
-            for todo in todos
-        ]
-    }
+    data = {employee_id : []}
+
+    for todo in todos:
+        task_info = {
+                'task': todo['title'],
+                'completed': todo['completed'],
+                'username': employee_name
+                }
+        data[employee_id].append(task_info)
 
     filename = '{}.json'.format(employee_id)
 
