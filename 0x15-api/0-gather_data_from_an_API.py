@@ -9,19 +9,22 @@ import requests
 import sys
 
 if __name__ == "__main__":
-     employee_id = sys.argv[1]  
-     response = requests.get(f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}')
-     todos = response.json()
-     # Get employee name
-     response_user = requests.get(f'https://jsonplaceholder.typicode.com/users/{employee_id}')
-     user_info = response_user.json()
-     employee_name = user_info['name']
-     
-     completed_tasks = [todo for todo in todos if todo['completed']]
-     num_completed_tasks = len(completed_tasks)
-     total_tasks = len(todos)
 
-     print(f"Employee {employee_name} is done with tasks ({num_completed_tasks}/{total_tasks}):")
+    BASE_URL = 'https://jsonplaceholder.typicode.com'
+    employee_id = sys.argv[1]
+    response = requests.get('{}/todos?userId={}'.format(BASE_URL, employee_id))
+    todos = response.json()
 
-     for task in completed_tasks:
-         print(f"\t{task['title']}")
+    response_user = requests.get('{}/users/{}'.format(BASE_URL, employee_id))
+    user_info = response_user.json()
+    employee_name = user_info['name']
+
+    completed_tasks = [todo for todo in todos if todo['completed']]
+    num_completed_tasks = len(completed_tasks)
+    total_tasks = len(todos)
+
+    print("Employee {} is done with tasks ({}/{}):".format(
+            employee_name, num_completed_tasks, total_tasks))
+
+    for task in completed_tasks:
+        print("\t{}".format(task['title']))
