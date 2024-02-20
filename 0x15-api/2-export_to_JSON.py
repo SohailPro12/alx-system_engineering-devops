@@ -34,7 +34,7 @@ if __name__ == "__main__":
         ]
     }
 
-    filename = '{}.csv'.format(employee_id)
+    filename = '{}.json'.format(employee_id)
 
     with open(filename, 'w') as json_file:
         json.dump(data, json_file)
