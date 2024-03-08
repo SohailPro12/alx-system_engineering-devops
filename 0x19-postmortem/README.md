@@ -2,7 +2,7 @@ Issue Summary:
 On June 15th, 2023, at 2:00 PM UTC+1, XYZ Corporation experienced a significant data breach lasting two hours until 4:00 PM UTC+1. The breach compromised the personal information of over 10 million customers, resulting from a sophisticated cyberattack exploiting vulnerabilities in the company's network security systems.
 
 Timeline:
-All times listed in EST
+All times listed in UTC+1
 2:00 PM - Cyberattack commenced, allowing hackers to gain unauthorized access to sensitive customer data.
 2:30 PM - Staff notified and investigation initiated.
 3:15 PM - Engineering team investigated database servers and network connections, initially suspecting software updates or network congestion.
