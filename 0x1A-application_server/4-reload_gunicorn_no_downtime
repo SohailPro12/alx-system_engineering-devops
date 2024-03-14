@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # Send HUP signal to Gunicorn master process to gracefully reload workers
-sudo kill -HUP $(pgrep gunicorn)
+pgrep gunicorn | xargs kill -HUP
