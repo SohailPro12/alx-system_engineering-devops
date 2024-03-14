@@ -2,6 +2,3 @@
 
 # Send HUP signal to Gunicorn master process to gracefully reload workers
 sudo kill -HUP $(sudo pgrep gunicorn)
-
-# Wait for a moment to allow workers to finish processing requests
-sleep 5
